@@ -1,5 +1,20 @@
 
-# 📊 Data Science Gitmoji Convention
+# 📊 Data Science Gitmoji Guide
+
+![](https://repository-images.githubusercontent.com/1040634553/460955b6-9d76-40c0-8f0c-3ee3e1385077)
+
+![Guide](https://img.shields.io/badge/type-Guide-blueviolet?style=flat-square&logo=book)
+![Data Science](https://img.shields.io/badge/domain-Data%20Science-orange?style=flat-square&logo=anaconda)
+![Git](https://img.shields.io/badge/version_control-Git-red?style=flat-square&logo=git)
+![Gitmoji](https://img.shields.io/badge/conventions-Gitmoji-yellow?style=flat-square&logo=git)
+![Markdown](https://img.shields.io/badge/format-Markdown-lightgrey?style=flat-square&logo=markdown)
+![Author](https://img.shields.io/badge/author-ibon-blue?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/status-En%20desarrollo-orange?style=flat-square)
+![PRs](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square)
+![Stars](https://img.shields.io/github/stars/imarranz/ds-gitmoji-guide?style=flat-square)
+![Forks](https://img.shields.io/github/forks/imarranz/ds-gitmoji-guide?style=flat-square)
+
 
 This repository defines a **Gitmoji-based convention** for Data Science projects.
 
@@ -52,7 +67,7 @@ Each commit message follows this structure:
 
 ```
 
-🧹 \[clean]: Remove outliers from ALT variable
+🧹 [clean]: Remove outliers from ALT variable
 
 Applied IQR method to detect and remove outliers in the ALT column.
 This improves normality assumptions for downstream models.
@@ -197,7 +212,7 @@ Examples illustrate how the convention looks in practice. They combine emojis, s
 
 ```
 
-🧹 \[clean]: Remove outliers from ALT variable
+🧹 [clean]: Remove outliers from ALT variable
 
 Applied IQR method to detect and remove outliers in the ALT column.
 This improves normality assumptions for downstream models.
@@ -206,17 +221,17 @@ This improves normality assumptions for downstream models.
 
 ```
 
-✨ \[model]: Add support vector machine for MASLD classification
+✨ [model]: Add support vector machine for MASLD classification
 
 * Kernel: RBF
-* Class\_weight: balanced
+* Class_weight: balanced
 * Trained with cohort v2
 
 ```
 
 ```
 
-📓 \[nb]: Add PCA exploration notebook
+📓 [nb]: Add PCA exploration notebook
 
 Includes variance explained plot, loadings heatmap,
 and interactive scatter for PC1 vs PC2.

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Science Gitmoji — Cheatsheet (Markdown + HTML)</title>
+  <style>
+    /* --- Base + theming --- */
+    :root{
+      --bg: #0b0c0f; --panel: #111318; --panel-2: #151821; --text: #e7e9ee; --muted: #a9b0bf; --accent: #7aa2ff; --border: #232633; --shadow: 0 6px 20px rgba(0,0,0,.25);
+      --radius: 14px; --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --table-stripe: rgba(255,255,255,.03);
+      --tag: #2b2f3a;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7f8fb; --panel:#ffffff; --panel-2:#fbfbfe; --text:#0d1424; --muted:#5c6576; --accent:#305cff; --border:#e7e9ef; --shadow:0 5px 18px rgba(14,18,26,.08); --table-stripe: rgba(0,0,0,.025); --tag:#eef1f7; }
+    }
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font: 16px/1.55 var(--font)}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+
+    header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .title{font-size:clamp(20px,2.4vw,28px);font-weight:750;letter-spacing:.2px}
+    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+    .field{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--border);padding:8px 10px;border-radius:12px;box-shadow:var(--shadow)}
+    .field input[type="search"]{background:transparent;border:0;outline:0;color:var(--text);width:min(56vw,380px);font: 600 15px var(--font)}
+    .field input::placeholder{color:var(--muted)}
+
+    .select, .toggle{background:var(--panel);border:1px solid var(--border);padding:6px 10px;border-radius:12px;box-shadow:var(--shadow)}
+    select{appearance:none;background:transparent;color:var(--text);border:0;outline:0;font:600 14px var(--font);padding-right:18px}
+
+    nav{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:100px;border:1px solid var(--border);background:var(--tag);text-decoration:none;color:var(--text);font:700 12px var(--font)}
+
+    .section{background:var(--panel-2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 14px 10px;box-shadow:var(--shadow);margin:14px 0}
+    .section h2{display:flex;align-items:center;gap:8px;font-size:18px;margin:0 0 6px}
+    .section p{margin:.35rem 0 1rem;color:var(--muted)}
+
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid var(--border)}
+    thead th{background:var(--panel);text-align:left;font:700 12px var(--font);letter-spacing:.3px;text-transform:uppercase;padding:10px;border-bottom:1px solid var(--border)}
+    tbody td{padding:10px;border-bottom:1px solid var(--border);vertical-align:top:font-size:16px}
+    tbody tr:nth-child(odd){background:var(--table-stripe)}
+
+    .emoji{font-size:30px}
+    .mono{font:700 16px var(--mono)}
+
+    .btn{cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--panel);padding:6px 10px;border-radius:10px;font:600 12px var(--font)}
+
+    .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--panel);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s ease}
+    .toast.show{opacity:1}
+
+    footer{margin:26px 0 10px;color:var(--muted);font-size:13px}
+    a{color:var(--accent);text-decoration:none}
+    .hidden{display:none !important}
+    .banner {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, var(--accent), #4e6ef2);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .banner-content h1 {
+      font-size: 4.5rem;
+      margin: 0;
+    }
+
+    .banner-content p {
+      font-size: 1.75rem;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .site-footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 16px;
+      margin-top: 40px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .site-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <div class="banner-content">
+      <h1>Data Science Gitmoji Guide</h1>
+      <p>A visual reference for commit messages in data science projects</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <div class="controls">
+        <label class="field" title="Search by emoji, meaning, or example text">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.2-4.2m1.2-5.3a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="q" type="search" placeholder="Search… e.g. imputer, pipeline, AUC" autofocus>
+        </label>
+        <label class="toggle" title="Copy target">
+          <select id="copyMode" aria-label="Copy mode">
+            <option value="example">Copy example commit</option>
+            <option value="emoji">Copy emoji</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <nav>
+      <a class="tag" href="#data">🔹 Data & Preparation</a>
+      <a class="tag" href="#eda">🔹 Exploration & Analysis</a>
+      <a class="tag" href="#model">🔹 Modeling & Evaluation</a>
+      <a class="tag" href="#nb">🔹 Notebooks & Reproducibility</a>
+      <a class="tag" href="#mlops">🔹 Pipelines, MLOps & Infra</a>
+      <a class="tag" href="#quality">🔹 Quality, Security & Maintenance</a>
+      <a class="tag" href="#docs">🔹 Documentation & Communication</a>
+    </nav>
+
+    <!-- Sections render here -->
+    <div id="sections"></div>
+
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Copied ✓</div>
+
+  <script>
+  ;(() => {
+    const sections = [
+      { id:'data', title:'🔹 Data & Preparation', desc:'The foundation of any Data Science project lies in data preparation. This includes ingestion, cleaning, handling missing values, defining schemas, and ensuring reproducibility.', rows:[
+        ['📥','Data ingestion / connectors','📥 [ingest]: Add LC-MS data loader'],
+        ['🧹','Data cleaning','🧹 [clean]: Normalize columns and remove outliers'],
+        ['🧩','Missing value imputation','🧩 [impute]: Add KNN imputer for BMI'],
+        ['🔀','Sampling / splitting','🔀 [data]: Stratified train/test split'],
+        ['🧱','Data schema validation','🧱 [schema]: Add Great Expectations checks'],
+        ['🏷️','Labeling / targets','🏷️ [labels]: Update MASLD diagnosis labels'],
+        ['🌱','Random seeds / reproducibility','🌱 [repro]: Fix random_state in pipeline'],
+        ['🧰','Feature engineering','🧰 [fe]: Add PCA-based features'],
+        ['🗃️','Data versioning (DVC)','🗃️ [dvc]: Track dataset v1.3'],
+        ['🕶️','Anonymization / privacy','🕶️ [privacy]: Mask patient IDs'],
+      ]},
+      { id:'eda', title:'🔹 Exploration & Analysis', desc:'Explore and analyze data with EDA, visualizations, statistical tests, and experiment tracking to keep your understanding well documented.', rows:[
+        ['🧐','Data exploration / EDA','🧐 [eda]: Generate profile report'],
+        ['📊','Visualizations','📊 [viz]: Add ROC and PR curves'],
+        ['📏','Statistical tests','📏 [stats]: Run Pearson correlation'],
+        ['🧪','Experiments','🧪 [exp]: Run new MASLD experiment'],
+        ['⚗️','Hyperparameters','⚗️ [hparam]: Bayesian optimization sweep'],
+      ]},
+      { id:'model', title:'🔹 Modeling & Evaluation', desc:'Introduce new models, retrain, refactor model code, benchmark performance, and evaluate with metrics or explainability tools.', rows:[
+        ['✨','New model','✨ [model]: Add logistic regression baseline'],
+        ['🔁','Retrain','🔁 [train]: Retrain SVM with new cohort'],
+        ['🛠️','Model refactor','🛠️ [model]: Clean redundant code in fit()'],
+        ['📈','Metrics','📈 [metrics]: Add AUC/PR reporting'],
+        ['🧠','Explainability (XAI)','🧠 [xai]: Add SHAP values'],
+        ['⏱️','Benchmarking / performance','⏱️ [perf]: Compare inference times'],
+      ]},
+      { id:'nb', title:'🔹 Notebooks & Reproducibility', desc:'Commit notebooks responsibly, convert them into scripts, freeze environments, and generate reports to ensure experiments are reproducible.', rows:[
+        ['📓','Notebooks','📓 [nb]: Add EDA notebook'],
+        ['🔗','Notebook → script','🔗 [nb2py]: Convert preprocessing to Python script'],
+        ['📰','Reports','📰 [report]: Generate results'],
+        ['📦','Freeze environment','📦 [env]: Add environment.yml'],
+      ]},
+      { id:'mlops', title:'🔹 Pipelines, MLOps & Infra', desc:'Automate and deploy workflows: configuration files, pipelines/DAGs, CI/CD, serving endpoints, monitoring, and rollbacks.', rows:[
+        ['⚙️','Config files','⚙️ [config]: Add pipeline.yaml'],
+        ['🏗️','Pipelines / DAGs','🏗️ [pipeline]: Add Airflow DAG'],
+        ['🤖','CI/CD','🤖 [ci]: Add GitHub Actions workflow'],
+        ['🌐','Serving / deployment','🌐 [serve]: Add FastAPI /predict endpoint'],
+        ['📡','Monitoring','📡 [monitor]: Add drift detection'],
+        ['⬅️','Rollback','⬅️ [rollback]: Revert model v2 to v1'],
+      ]},
+      { id:'quality', title:'🔹 Quality, Security & Maintenance', desc:'Keep quality high with tests, fixes, security updates, refactors, dependency management, and code style.', rows:[
+        ['✅','Tests','✅ [tests]: Add unit test for preprocessing'],
+        ['🐞','Bugfix','🐞 [fix]: Correct NaN handling in imputer'],
+        ['🚑','Hotfix','🚑 [hotfix]: Fix prod error in endpoint'],
+        ['🔐','Security / secrets','🔐 [security]: Rotate API keys'],
+        ['♻️','Refactor','♻️ [refactor]: Simplify data pipeline'],
+        ['📌','Dependency management','📌 [deps]: Pin pandas==2.2.2'],
+        ['🎨','Lint / style','🎨 [style]: Format code with black'],
+      ]},
+      { id:'docs', title:'🔹 Documentation & Communication', desc:'Document decisions, update text/strings, manage contributors, and tag releases.', rows:[
+        ['📝','Documentation','📝 [docs]: Update README'],
+        ['💬','Text / strings','💬 [copy]: Fix UI messages'],
+        ['🙋','Contributors','🙋 [community]: Add co-author'],
+        ['🏷️','Release','🏷️ [release]: Tag v1.0.0'],
+      ]},
+    ]
+
+    const elQ = document.querySelector('#q')
+    const elMode = document.querySelector('#copyMode')
+    const elSections = document.querySelector('#sections')
+    const elToast = document.querySelector('#toast')
+
+    function showToast(text){
+      elToast.textContent = text
+      elToast.classList.add('show')
+      setTimeout(()=>elToast.classList.remove('show'), 1100)
+    }
+
+    function copy(text){
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(()=>showToast('Copied ✓'))
+      } else {
+        const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); showToast('Copied ✓') } finally { document.body.removeChild(ta) }
+      }
+    }
+
+    function rowTemplate([emoji, meaning, example]){
+      return `<tr data-emoji="${emoji}" data-meaning="${meaning.toLowerCase()}" data-example="${example.toLowerCase()}">
+        <td class="emoji" data-copy="emoji" title="Click to copy">${emoji}</td>
+        <td>${meaning}</td>
+        <td><span class="mono" data-copy="example" title="Click to copy">${example}</span></td>
+      </tr>`
+    }
+
+    function sectionTemplate({id, title, desc, rows}){
+      return `<section class="section" id="${id}">
+        <h2>${title}</h2>
+        <p>${desc}</p>
+        <div class="table-wrap">
+          <table role="table" aria-describedby="${id}-desc">
+            <thead><tr><th width="90">Emoji</th><th>Meaning</th><th>Example</th></tr></thead>
+            <tbody>
+              ${rows.map(rowTemplate).join('')}
+            </tbody>
+          </table>
+        </div>
+      </section>`
+    }
+
+    function render(){
+      elSections.innerHTML = sections.map(sectionTemplate).join('')
+    }
+
+    function applyFilter(){
+      const term = (elQ.value||'').trim().toLowerCase()
+      document.querySelectorAll('tbody tr').forEach(tr => {
+        if(!term){ tr.classList.remove('hidden'); return }
+        const match = tr.dataset.meaning.includes(term) || tr.dataset.example.includes(term) || tr.dataset.emoji.includes(term)
+        tr.classList.toggle('hidden', !match)
+      })
+    }
+
+    // Copy interactions (delegate)
+    document.addEventListener('click', (e)=>{
+      const td = e.target.closest('[data-copy]')
+      if(!td) return
+      const tr = td.closest('tr')
+      const mode = elMode.value
+      const example = tr.querySelector('[data-copy="example"]').textContent
+      const emoji = tr.querySelector('[data-copy="emoji"]').textContent
+      copy(mode === 'emoji' ? emoji : example)
+    })
+
+    elQ.addEventListener('input', applyFilter)
+
+    // Initial render
+    render();
+  })()
+  </script>
+</body>
+<footer class="site-footer">
+  <p>© 2025 Ibon Martínez-Arranz — <a href="https://github.com/imarranz/data-science-gitmoji-guide" target="_blank">View on GitHub</a></p>
+</footer>
+</html>
+

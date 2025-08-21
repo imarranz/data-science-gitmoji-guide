@@ -281,7 +281,8 @@ Guidelines summarize the best practices for writing commits under this conventio
 This convention builds on the [gitmoji.dev](https://gitmoji.dev/)  initiative and adapts it for Data Science workflows. It reflects lessons learned from working with **notebooks**, **reproducible pipelines**, **MLOps**, and **collaborative data analysis**. The result is a practical toolkit to make commit histories more meaningful and aligned with scientific and engineering practices.
 
 * [gitmoji.dev](https://gitmoji.dev)
-* Data Science workflow needs (EDA, cleaning, modeling, MLOps).
+* Data Science workflow needs (EDA, cleaning, modeling, MLOps)
+* [GitHub Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet) — Full list of emoji codes supported by GitHub.
 
 ---
 

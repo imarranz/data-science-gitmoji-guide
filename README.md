@@ -18,7 +18,7 @@
 
 This repository defines a **Gitmoji-based convention** for Data Science projects.
 
-It extends the original [gitmoji.dev](https://gitmoji.dev/) idea with custom emojis and scopes designed for **data pipelines, notebooks, modeling, visualization, MLOps and reproducibility**.
+It extends the original [gitmoji.dev](https://gitmoji.dev/) idea by incorporating [GitHub-supported emoji codes](https://github.com/ikatyang/emoji-cheat-sheet) to maximize compatibility and readability in commit messages. These enhancements include custom emojis and well-defined scopes specifically tailored for **data pipelines, exploratory data analysis (EDA), notebooks, modeling, visualization, MLOps, and reproducibility**. The goal is to provide a richer, more expressive commit convention that captures both the technical and scientific context of each change, making collaboration easier and commit histories more insightful for teams working in Data Science projects.
 
 ---
 

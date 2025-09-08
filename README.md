@@ -197,6 +197,8 @@ Good science and engineering rely on **clear communication**. This section cover
 
 ### 🔹 Documentation & Communication
 
+Document decisions, update text/strings, manage contributors, and tag releases.
+
 | Emoji | Meaning | Example |
 |-------|---------|---------|
 | 📝 | Documentation | 📝 [docs]: Update README |

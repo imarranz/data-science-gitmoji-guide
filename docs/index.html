@@ -157,7 +157,7 @@
   <script>
   ;(() => {
     const sections = [
-      { id:'data', title:'🔹 Data & Preparation', desc:'The foundation of any Data Science project lies in data preparation. This includes ingestion, cleaning, handling missing values, defining schemas, and ensuring reproducibility.', rows:[
+      { id:'data', title:'🔹 Data & Preparation', desc:'The foundation of any Data Science project lies in data preparation. This includes ingestion, cleaning, handling missing values, defining schemas, and ensuring reproducibility. Clear commits in this category help track how raw data was transformed into reliable inputs for models, making the workflow transparent and auditable.', rows:[
         ['📥','Data ingestion / connectors','📥 [ingest]: Add LC-MS data loader'],
         ['🧹','Data cleaning','🧹 [clean]: Normalize columns and remove outliers'],
         ['🧩','Missing value imputation','🧩 [impute]: Add KNN imputer for BMI'],
@@ -169,14 +169,14 @@
         ['🗃️','Data versioning (DVC)','🗃️ [dvc]: Track dataset v1.3'],
         ['🕶️','Anonymization / privacy','🕶️ [privacy]: Mask patient IDs'],
       ]},
-      { id:'eda', title:'🔹 Exploration & Analysis', desc:'Explore and analyze data with EDA, visualizations, statistical tests, and experiment tracking to keep your understanding well documented.', rows:[
+      { id:'eda', title:'🔹 Exploration & Analysis', desc:'Before building models, data must be explored and analyzed. This stage covers exploratory data analysis (EDA), visualizations, statistical tests, and experiment tracking. Capturing these changes with dedicated emojis ensures that the process of understanding the data remains well documented and easy to revisit.', rows:[
         ['🧐','Data exploration / EDA','🧐 [eda]: Generate profile report'],
         ['📊','Visualizations','📊 [viz]: Add ROC and PR curves'],
         ['📏','Statistical tests','📏 [stats]: Run Pearson correlation'],
         ['🧪','Experiments','🧪 [exp]: Run new MASLD experiment'],
         ['⚗️','Hyperparameters','⚗️ [hparam]: Bayesian optimization sweep'],
       ]},
-      { id:'model', title:'🔹 Modeling & Evaluation', desc:'Introduce new models, retrain, refactor model code, benchmark performance, and evaluate with metrics or explainability tools.', rows:[
+      { id:'model', title:'🔹 Modeling & Evaluation', desc:'Modeling is the core of many Data Science projects. This section includes introducing new models, retraining with updated data, refactoring model code, benchmarking performance, and evaluating with metrics or explainability tools. Well-tagged commits make it easy to trace model evolution and compare approaches over time.', rows:[
         ['✨','New model','✨ [model]: Add logistic regression baseline'],
         ['🔁','Retrain','🔁 [train]: Retrain SVM with new cohort'],
         ['🛠️','Model refactor','🛠️ [model]: Clean redundant code in fit()'],
@@ -184,13 +184,13 @@
         ['🧠','Explainability (XAI)','🧠 [xai]: Add SHAP values'],
         ['⏱️','Benchmarking / performance','⏱️ [perf]: Compare inference times'],
       ]},
-      { id:'nb', title:'🔹 Notebooks & Reproducibility', desc:'Commit notebooks responsibly, convert them into scripts, freeze environments, and generate reports to ensure experiments are reproducible.', rows:[
+      { id:'nb', title:'🔹 Notebooks & Reproducibility', desc:'Notebooks are often the entry point for Data Science work, but reproducibility requires discipline. This category covers commits related to notebooks, converting them into scripts, freezing environments, and generating reports. These practices ensure that experiments can be rerun consistently and shared with collaborators.', rows:[
         ['📓','Notebooks','📓 [nb]: Add EDA notebook'],
         ['🔗','Notebook → script','🔗 [nb2py]: Convert preprocessing to Python script'],
         ['📰','Reports','📰 [report]: Generate results'],
         ['📦','Freeze environment','📦 [env]: Add environment.yml'],
       ]},
-      { id:'mlops', title:'🔹 Pipelines, MLOps & Infra', desc:'Automate and deploy workflows: configuration files, pipelines/DAGs, CI/CD, serving endpoints, monitoring, and rollbacks.', rows:[
+      { id:'mlops', title:'🔹 Pipelines, MLOps & Infra', desc:'As projects mature, workflows need to be automated and deployed. This section includes configuration files, pipelines/DAGs, CI/CD, serving endpoints, monitoring, and rollbacks. Using dedicated emojis highlights the operational side of Data Science, bridging the gap between experimentation and production.', rows:[
         ['⚙️','Config files','⚙️ [config]: Add pipeline.yaml'],
         ['🏗️','Pipelines / DAGs','🏗️ [pipeline]: Add Airflow DAG'],
         ['🤖','CI/CD','🤖 [ci]: Add GitHub Actions workflow'],
@@ -198,7 +198,7 @@
         ['📡','Monitoring','📡 [monitor]: Add drift detection'],
         ['⬅️','Rollback','⬅️ [rollback]: Revert model v2 to v1'],
       ]},
-      { id:'quality', title:'🔹 Quality, Security & Maintenance', desc:'Keep quality high with tests, fixes, security updates, refactors, dependency management, and code style.', rows:[
+      { id:'quality', title:'🔹 Quality, Security & Maintenance', desc:'Good science and engineering rely on clear communication. This section covers documentation, contributors, release tagging, and updates to text or messages. By tagging these commits explicitly, teams make it easier for others to onboard, reproduce results, and understand the project history.', rows:[
         ['✅','Tests','✅ [tests]: Add unit test for preprocessing'],
         ['🐞','Bugfix','🐞 [fix]: Correct NaN handling in imputer'],
         ['🚑','Hotfix','🚑 [hotfix]: Fix prod error in endpoint'],
